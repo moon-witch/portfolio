@@ -1,0 +1,8 @@
+:root {
+  --primary: rgb(155, 202, 248);
+  --grey: rgb(180, 180, 180);
+  --dark: rgb(47, 71, 79);
+  --dark-alt: rgb(40, 127, 170);
+  --light: rgb(224,255,255);
+  --sidebar-width: 160px;
+}
