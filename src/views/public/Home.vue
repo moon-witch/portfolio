@@ -106,6 +106,7 @@ $shadows-big: multiple-box-shadow(100);
 
   span {
     background: -webkit-linear-gradient(var(--primary), var(--dark));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
