@@ -5,14 +5,20 @@ import Nav from "./components/Nav.vue";
 
 <template>
   <div id="app">
-    <Nav/>
-    <div class="responsive">
-      <RouterView/>
+    <div v-if="$route.path != '/'">
+      <Nav />
+    </div>
+    <div v-if="$route.path != '/'" class="responsive">
+      <RouterView />
+    </div>
+    <div v-else>
+      <RouterView />
     </div>
   </div>
 </template>
 
 <style lang="scss">
+
 html {
   height: 100%;
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
@@ -28,6 +34,4 @@ html {
     margin-top: 0rem;
   }
 }
-
-
 </style>

@@ -12,6 +12,14 @@
         </button>
       </li>
       <li class="flex text-center">
+        <a class="w-full py-2 mx-1">
+          <router-link class="button justify-center" to="/">
+            <span class="icons pulse py-0.5">
+              <Icon icon="material-symbols:door-front-outline" />
+            </span> </router-link
+        ></a>
+      </li>
+      <li class="flex text-center">
         <a class="w-full py-2 mx-1"
           ><router-link class="button justify-center" to="/dashboard">
             <span class="icons pulse py-0.5">
@@ -99,7 +107,7 @@
 
       <h3>Menu</h3>
       <div class="menu pb-16">
-        <router-link class="button" to="/">
+        <router-link class="button" to="/home">
           <span class="icons"> <Icon icon="nimbus:home" /> </span>
           <span class="text">home</span>
         </router-link>
@@ -133,6 +141,12 @@
       <div class="flex"></div>
 
       <div class="menu">
+        <router-link class="button" to="/">
+          <span class="icons">
+            <Icon icon="material-symbols:door-front-outline" />
+          </span>
+          <span class="text">landing</span>
+        </router-link>
         <router-link class="button" to="/settings">
           <span class="icons"> <Icon icon="mingcute:settings-5-line" /> </span>
           <span class="text">settings</span>
@@ -280,7 +294,7 @@ const toggleMenu = () => {
   }
 
   &.is-expanded {
-    width: 56%;
+    width: 78%;
 
     @media (max-width: 365px) {
       width: 75%;
@@ -292,7 +306,7 @@ const toggleMenu = () => {
 
     .button .icons {
       opacity: 1;
-      transition: 1.5s ease-out;
+      transition: 0.5s ease-out;
     }
   }
 
@@ -423,7 +437,7 @@ const toggleMenu = () => {
     overflow: hidden;
     padding: 1rem;
 
-    background-color: var(--dark);
+    background-color: transparent;
     color: var(--light);
 
     transition: 0.4s ease-out;
@@ -525,6 +539,7 @@ const toggleMenu = () => {
     &.is-expanded {
       width: var(--sidebar-width);
       box-shadow: 0 0 20px 0 var(--dark);
+      background-color: var(--dark);
 
       .logo {
         width: 100%;

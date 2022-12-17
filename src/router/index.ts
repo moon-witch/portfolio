@@ -1,21 +1,30 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/public/Home.vue";
+import LandingVue from "../views/public/Landing.vue";
+import HomeView from "../views/public/Landing.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
-      name: "home",
-      component: HomeView,
+      name: "landing",
+      component: LandingVue,
     },
     {
       path: "/touchdown",
-      name: "landing",
+      name: "touchdown",
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import("../views/user/Profile.vue"),
+    },
+    {
+      path: "/home",
+      name: "home",
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import("../views/public/Home.vue"),
     },
     {
       path: "/about",
