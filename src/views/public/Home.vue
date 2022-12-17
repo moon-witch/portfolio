@@ -1,109 +1,48 @@
-<script setup lang="ts">
-import { Icon } from "@iconify/vue";
-</script>
-
 <template>
-  <div id="stars"></div>
-  <div id="stars2"></div>
-  <div id="stars3"></div>
-  <div id="title">
-    <span>moonwitch</span>
+  <div>
+    <div class="flex justify-center pt-20">
+      <div class="link1 mr-4 lg:mr-32 whitespace-nowrap">
+        <router-link to="/about">
+          <span class="text">who i am</span>
+        </router-link>
+      </div>
+      <div class="link2 mr-4 lg:mr-32 whitespace-nowrap">
+        <router-link to="/code">
+          <span class="text">my code</span>
+        </router-link>
+      </div>
+      <div class="link3 mr-4 lg:mr-32 whitespace-nowrap">
+        <router-link to="/other">
+          <span class="text">what i do</span>
+        </router-link>
+      </div>
+    </div>
+    <div id="title" class="text-center">
+      <span>here begins your journey through my mind</span>
+    </div>
+    <div class="description pt-32">feel free to explore</div>
+    <div class="description pt-8">
+      you never know what you might find<span class="dot1">.</span
+      ><span class="dot2">.</span><span class="dot3">.</span>
+    </div>
   </div>
-  <button id="gith">
-    <a href="https://github.com/moon-witch" target="_blank">
-      <Icon icon="uim:github-alt" height="60" />
-    </a>
-  </button>
-  <button id="lnkd">
-    <a
-      href="https://de.linkedin.com/in/joshua-langenbach-873a19252/en"
-      target="_blank"
-    >
-      <Icon icon="mdi:linkedin" height="60" />
-    </a>
-  </button>
 </template>
 
-<style lang="scss">
-@function multiple-box-shadow($n) {
-  $value: "#{random(2000)}px #{random(2000)}px #{var(--primary)}";
-  @for $i from 2 through $n {
-    $value: "#{$value} , #{random(2000)}px #{random(2000)}px #{var(--primary)}";
-  }
-  @return unquote($value);
+<style scoped lang="scss">
+* {
+  transition: 2s ease;
 }
-
-$shadows-small: multiple-box-shadow(700);
-$shadows-medium: multiple-box-shadow(200);
-$shadows-big: multiple-box-shadow(100);
-
-#stars {
-  width: 1px;
-  height: 1px;
-  background: transparent;
-  box-shadow: $shadows-small;
-  animation: animStar 50s linear infinite;
-
-  &:after {
-    content: " ";
-    position: absolute;
-    top: 2000px;
-    width: 1px;
-    height: 1px;
-    background: transparent;
-  }
-}
-
-#stars2 {
-  width: 2px;
-  height: 2px;
-  background: transparent;
-  box-shadow: $shadows-medium;
-  animation: animStar 100s linear infinite;
-
-  &:after {
-    content: " ";
-    position: absolute;
-    top: 2000px;
-    width: 2px;
-    height: 2px;
-    background: transparent;
-    box-shadow: $shadows-medium;
-  }
-}
-
-#stars3 {
-  width: 3px;
-  height: 3px;
-  background: transparent;
-  box-shadow: $shadows-big;
-  animation: animStar 150s linear infinite;
-
-  &:after {
-    content: " ";
-    position: absolute;
-    top: 2000px;
-    width: 3px;
-    height: 3px;
-    background: transparent;
-    box-shadow: $shadows-big;
-  }
-}
-
 #title {
-  position: absolute;
-  top: 45%;
-  left: 0;
-  right: 0;
-
-  text-align: center;
   font-weight: 300;
   font-size: 50px;
   letter-spacing: 10px;
+  padding-top: 7%;
 
-  margin-top: -60px;
-  padding-left: 10px;
-
+  @media (max-width: 900px) {
+    font-size: 4vw;
+    letter-spacing: 5px;
+    padding-top: 30%;
+  }
   span {
     background: -webkit-linear-gradient(var(--primary), var(--dark));
     background-clip: text;
@@ -112,36 +51,103 @@ $shadows-big: multiple-box-shadow(100);
   }
 }
 
-#gith {
-  position: absolute;
-  top: 55%;
-  left: 53.5%;
+.description {
+  font-weight: 200;
+  font-size: 40px;
+  letter-spacing: 5px;
+  display: flex;
+  justify-content: center;
+  color: var(--dark);
 
-  color: var(--primary);
-
-  @media (max-width: 500px) {
-    left: 58%;
+  @media (max-width: 900px) {
+    font-size: 3vw;
   }
 }
 
-#lnkd {
-  position: absolute;
-  top: 55%;
-  left: 43%;
-
-  color: var(--primary);
-
-  @media (max-width: 500px) {
-    left: 25%;
-  }
+.dot1 {
+  animation: drop 140s 4.2s linear infinite;
+  -webkit-font-smoothing: antialiased;
+}
+.dot2 {
+  animation: drop 120s 3.7s linear infinite;
+  -webkit-font-smoothing: antialiased;
+}
+.dot3 {
+  animation: drop 100s 3.5s linear infinite;
+  -webkit-font-smoothing: antialiased;
 }
 
-@keyframes animStar {
+.link1 {
+  margin-left: 25%;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: var(--dark);
+  text-decoration: overline 1px;
+  opacity: 0;
+
+  animation: appear 3s 2s forwards;
+  -webkit-font-smoothing: antialiased;
+
+  :hover {
+    cursor: crosshair;
+  }
+
+  @media (max-width:900px) {
+    font-size: 3vw;
+  }
+}
+.link2 {
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: var(--dark);
+  text-decoration: overline 1px;
+  opacity: 0;
+
+  animation: appear 3s 3s forwards;
+  -webkit-font-smoothing: antialiased;
+
+  :hover {
+    cursor: crosshair;
+  }
+
+  @media (max-width:900px) {
+    font-size: 3vw;
+  }
+}
+.link3 {
+  margin-right: 25%;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: var(--dark);
+  text-decoration: overline 1px;
+  opacity: 0;
+
+  animation: appear 3s 4s forwards;
+  -webkit-font-smoothing: antialiased;
+
+  :hover {
+    cursor: crosshair;
+  }
+
+  @media (max-width:900px) {
+    font-size: 3vw;
+  }
+}
+@keyframes drop {
   from {
     transform: translateY(0px);
   }
   to {
-    transform: translateY(-2000px);
+    transform: translateY(1000px);
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
   }
 }
 </style>
