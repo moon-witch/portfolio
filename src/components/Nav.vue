@@ -50,7 +50,7 @@
     <ul class="menu flex flex-wrap mx-2">
       <li class="flex text-center">
         <a class="w-full py-2 mx-1"
-          ><router-link class="button justify-center" to="/">
+          ><router-link class="button justify-center" to="/home">
             <span class="icons pulse py-0.5">
               <Icon icon="nimbus:home" />
             </span> </router-link
@@ -107,26 +107,38 @@
 
       <h3>Menu</h3>
       <div class="menu pb-16">
-        <router-link class="button" to="/home">
-          <span class="icons"> <Icon icon="nimbus:home" /> </span>
-          <span class="text">home</span>
-        </router-link>
         <router-link class="button" to="/about">
           <span class="icons"> <Icon icon="ooui:moon" /> </span>
-          <span class="text">about</span>
+          <span class="text whitespace-nowrap">who i am</span>
         </router-link>
         <router-link class="button" to="/code">
           <span class="icons"> <Icon icon="ph:code-simple-light" /> </span>
-          <span class="text">coding</span>
+          <span class="text whitespace-nowrap">my code</span>
         </router-link>
         <router-link class="button" to="/other">
           <span class="icons">
             <Icon icon="fluent:brain-circuit-20-regular" />
           </span>
-          <span class="text">other</span>
+          <span class="text whitespace-nowrap">what i do</span>
         </router-link>
       </div>
-      <h3>account</h3>
+      <h3>experiences</h3>
+      <div class="menu">
+        <router-link class="button" to="/home">
+          <span class="icons"> <Icon icon="nimbus:home" /> </span>
+          <span class="text">home</span>
+        </router-link>
+        <router-link class="button" to="/">
+          <span class="icons">
+            <Icon icon="material-symbols:door-front-outline" />
+          </span>
+          <span class="text">landing</span>
+        </router-link>
+      </div>
+
+      <div class="flex"></div>
+
+      <!-- <h3>account</h3>
       <div class="menu">
         <router-link class="button" to="/profile">
           <span class="icons"> <Icon icon="ph:user-light" /> </span>
@@ -136,17 +148,6 @@
           <span class="icons"> <Icon icon="carbon:data-vis-1" /> </span>
           <span class="text">dashboard</span>
         </router-link>
-      </div>
-
-      <div class="flex"></div>
-
-      <div class="menu">
-        <router-link class="button" to="/">
-          <span class="icons">
-            <Icon icon="material-symbols:door-front-outline" />
-          </span>
-          <span class="text">landing</span>
-        </router-link>
         <router-link class="button" to="/settings">
           <span class="icons"> <Icon icon="mingcute:settings-5-line" /> </span>
           <span class="text">settings</span>
@@ -155,7 +156,11 @@
           <span class="icons"> <Icon icon="uiw:logout" /> </span>
           <span class="text">logout</span>
         </div>
-      </div>
+      </div> -->
+
+      <hr class="sidebar-footer" :class="`${isExpanded ? 'is-expanded' : ''}`"/>
+      <div class="sidebar-footer" :class="`${isExpanded ? 'is-expanded' : ''}`">made by moonwitch</div>
+      <div class="sidebar-footer" :class="`${isExpanded ? 'is-expanded' : ''}`">2022</div>
     </aside>
   </div>
 </template>
@@ -442,6 +447,20 @@ const toggleMenu = () => {
 
     transition: 0.4s ease-out;
 
+    .sidebar-footer {
+      color: var(--light);
+      transition: 0.1s ease-out;
+      font-size: 0.7rem;
+      text-align: center;
+      visibility: hidden;
+      opacity: 0;
+
+      &.is-expanded {
+        visibility: visible;
+        transition: 4s 0.5s ease-out;
+        opacity: 1;
+      }
+    }
     .flex {
       flex: 1 1 0;
     }

@@ -43,7 +43,7 @@ import { Icon } from "@iconify/vue";
   </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 @function multiple-box-shadow($n) {
   $value: "#{random(2000)}px #{random(2000)}px #{var(--primary)}";
   @for $i from 2 through $n {
