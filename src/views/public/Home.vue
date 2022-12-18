@@ -3,17 +3,17 @@
     <div class="flex justify-center pt-20">
       <div class="link1 mr-4 lg:mr-32 whitespace-nowrap">
         <router-link to="/about">
-          <span class="text">who i am</span>
+          <span>who i am</span>
         </router-link>
       </div>
       <div class="link2 mr-4 lg:mr-32 whitespace-nowrap">
         <router-link to="/code">
-          <span class="text">my code</span>
+          <span>my tools</span>
         </router-link>
       </div>
       <div class="link3 mr-4 lg:mr-32 whitespace-nowrap">
         <router-link to="/other">
-          <span class="text">what i do</span>
+          <span>what i do</span>
         </router-link>
       </div>
     </div>
@@ -60,7 +60,9 @@
   color: var(--dark);
 
   @media (max-width: 900px) {
-    font-size: 3vw;
+    font-size: 4vw;
+    font-weight: 300;
+    letter-spacing: 3px;
   }
 }
 

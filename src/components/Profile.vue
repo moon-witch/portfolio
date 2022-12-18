@@ -20,7 +20,7 @@
       <div
         class="w-52 h-52 bg-indigo-100 mx-auto rounded-full inset-x-0 top-0 flex items-center justify-center text-indigo-500"
       >
-        <img src="@/assets/profilepic.jpg" class="rounded-full profilepic"/>
+        <img src="@/assets/profilepic.jpg" class="rounded-full"/>
       </div>
     </div>
 

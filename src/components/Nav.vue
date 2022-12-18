@@ -66,7 +66,7 @@
       </li>
       <li class="flex text-center">
         <a class="w-full py-2 mx-1"
-          ><router-link class="button justify-center" to="/code">
+          ><router-link class="button justify-center" to="/other">
             <span class="icons pulse py-0.5">
               <Icon icon="ph:code-simple-light" />
             </span> </router-link
@@ -74,7 +74,7 @@
       </li>
       <li class="flex text-center">
         <a class="w-full py-2 mx-1"
-          ><router-link class="button justify-center" to="/other">
+          ><router-link class="button justify-center" to="/code">
             <span class="icons pulse py-0.5">
               <Icon icon="fluent:brain-circuit-20-regular" />
             </span> </router-link
@@ -82,7 +82,7 @@
       </li>
       <li class="flex text-center">
         <a class="w-full py-2 mx-1"
-          ><router-link class="button justify-center" to="/profile">
+          ><router-link class="button justify-center" to="/touchdown">
             <span class="icons pulse py-0.5">
               <Icon icon="ph:user-light" />
             </span> </router-link
@@ -111,15 +111,15 @@
           <span class="icons"> <Icon icon="ooui:moon" /> </span>
           <span class="text whitespace-nowrap">who i am</span>
         </router-link>
-        <router-link class="button" to="/code">
-          <span class="icons"> <Icon icon="ph:code-simple-light" /> </span>
-          <span class="text whitespace-nowrap">my code</span>
-        </router-link>
         <router-link class="button" to="/other">
+          <span class="icons"> <Icon icon="ph:code-simple-light" /> </span>
+          <span class="text whitespace-nowrap">what i do</span>
+        </router-link>
+        <router-link class="button" to="/code">
           <span class="icons">
             <Icon icon="fluent:brain-circuit-20-regular" />
           </span>
-          <span class="text whitespace-nowrap">what i do</span>
+          <span class="text whitespace-nowrap">tools i use</span>
         </router-link>
       </div>
       <h3>experiences</h3>
@@ -158,9 +158,16 @@
         </div>
       </div> -->
 
-      <hr class="sidebar-footer" :class="`${isExpanded ? 'is-expanded' : ''}`"/>
-      <div class="sidebar-footer" :class="`${isExpanded ? 'is-expanded' : ''}`">made by moonwitch</div>
-      <div class="sidebar-footer" :class="`${isExpanded ? 'is-expanded' : ''}`">2022</div>
+      <hr
+        class="sidebar-footer"
+        :class="`${isExpanded ? 'is-expanded' : ''}`"
+      />
+      <div class="sidebar-footer" :class="`${isExpanded ? 'is-expanded' : ''}`">
+        made by moonwitch
+      </div>
+      <div class="sidebar-footer" :class="`${isExpanded ? 'is-expanded' : ''}`">
+        2022
+      </div>
     </aside>
   </div>
 </template>

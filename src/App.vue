@@ -5,7 +5,10 @@ import Nav from "./components/Nav.vue";
 
 <template>
   <div id="app">
-    <div v-if="$route.path != '/' && $route.path != '/home'" class="nav-transition">
+    <div
+      v-if="$route.path != '/' && $route.path != '/home'"
+      class="nav-transition"
+    >
       <Nav />
     </div>
     <div>
@@ -31,11 +34,23 @@ html {
   -o-animation: smooth 3s ease-in;
   -ms-animation: smooth 3s ease-in;
   animation: smooth 3s ease-in;
+
+  @media (max-width: 768px) {
+    -webkit-animation: smooth 1s ease-in;
+    -moz-animation: smooth 1s ease-in;
+    -o-animation: smooth 1s ease-in;
+    -ms-animation: smooth 1s ease-in;
+    animation: smooth 1s ease-in;
+  }
 }
 
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;
+
+  @media (max-width:768px) {
+    transition: opacity 0s ease;
+  }
 }
 .fade-enter-from,
 .fade-leave-to {
