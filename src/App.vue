@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import { RouterView } from "vue-router";
 import Nav from "./components/Nav.vue";
+
+//TODO: 
+//add code samples
+//add auth + login page + supabase intergration + user profile
+//bring all locales into locales file and use i18n
+//simplify image imports
+//redo color scheme of general theme
+//rework responsiveness of cards on medium size devices
 </script>
 
 <template>
